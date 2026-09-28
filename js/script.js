@@ -218,25 +218,25 @@
 //   }
 // }
 
-let currentController = null;
+// let currentController = null;
 
-async function loadUsers() {
-  currentController?.abort();                 // cancel any in-flight request
-  currentController = new AbortController();
+// async function loadUsers() {
+//   currentController?.abort();                 // cancel any in-flight request
+//   currentController = new AbortController();
 
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-      signal: currentController.signal
-    });
-    const users = await response.json();
-    console.log("got", users.length, "users");
-  } catch (error) {
-    if (error.name !== "AbortError") console.log("Error:", error.message);
-  } finally {
-    currentController = null;
-  }
-}
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users", {
+//       signal: currentController.signal
+//     });
+//     const users = await response.json();
+//     console.log("got", users.length, "users");
+//   } catch (error) {
+//     if (error.name !== "AbortError") console.log("Error:", error.message);
+//   } finally {
+//     currentController = null;
+//   }
+// }
 
 // Simulate two quick clicks:
-loadUsers();
-setTimeout(loadUsers, 10);
+// loadUsers();
+// setTimeout(loadUsers, 10);
