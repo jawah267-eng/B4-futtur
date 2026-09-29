@@ -51,7 +51,7 @@ header h1 {
 
 .card {
     display: grid;
-    min-height: 100px;
+    min-height: 200px;
     place-items: center;
     padding: 1.5rem;
     border: 1px solid #d8e4e1;
@@ -67,6 +67,41 @@ header h1 {
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 16px 30px rgb(24 48 45 / 16%);
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: min(1100px, calc(100% - 2rem));
+    margin: 0 auto 2rem;
+}
+
+#pagination button {
+    min-width: 42px;
+    height: 42px;
+    padding: 0 0.75rem;
+    border: 1px solid #b9d2cc;
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--primary-dark);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+#pagination button:hover {
+    transform: translateY(-2px);
+    background: #dcebe7;
+}
+
+#pagination button.active {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: #ffffff;
 }
 
 footer {
@@ -86,5 +121,35 @@ footer {
         min-height: auto;
     }
 
-  
+    #pagination {
+        width: min(100% - 1.5rem, 360px);
+    }
 }
+.title{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.more-details{
+    display: none;
+    margin-top: 0.5rem;
+    color: var(--muted);
+}
+.card:hover .more-details {
+  display: block;
+}
+.section{
+      width: 201px;
+    height: 65px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.section h3 {
+      background-color: #457559;
+    height: 150px;
+    padding: 20px;
+    color: white;
+    
+}
+
